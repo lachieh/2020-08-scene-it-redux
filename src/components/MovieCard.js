@@ -5,9 +5,9 @@ export default function MovieCard(props) {
   const { Title, Year, Poster } = props.movie;
 
   return (
-    <Card>
+    <Card style={{ height: '100%' }} >
       <CardActionArea>
-        <CardMedia image={ Poster } style={{ height: '400px' }}/>
+        <CardMedia image={ Poster } style={{ height: '400px'}}/>
         <CardContent>
           <Typography variant="h5">{ Title }</Typography>
           <Typography color="textSecondary">{ Year }</Typography>

@@ -1,4 +1,4 @@
-import { Button, Container, Grid, TextField, Typography } from '@material-ui/core';
+import { Box, Button, Container, Grid, IconButton, InputBase, Paper, TextField, Typography } from '@material-ui/core';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
@@ -26,10 +26,22 @@ function App() {
     <Container>
       <Typography variant="h1" align="center">Scene It!</Typography>
       <Grid container direction="row" justify="center" alignItems="center">
-        <form onSubmit={handleSubmit}>
-          <TextField label="Search" variant="outlined" value={search} onChange={(e) => {setSearch(e.target.value)}} />
-          <Button type="submit" variant="contained" size="large">Search</Button>
-        </form>
+        <Box p={2} width="80%" maxWidth={400}>
+          <Paper component="form" onSubmit={handleSubmit} style={{ width: '100%' }}>
+            <Box p={1}>
+              <Grid container direction="row" alignItems="center" justify="center">
+                <InputBase
+                  placeholder="Search"
+                  inputProps={{ 'aria-label': 'search movies' }}
+                  value={search}
+                  onChange={(e) => {setSearch(e.target.value)}}
+                  style={{ flexGrow: '1' }}
+                />
+                <Button type="submit" variant="contained" disableElevation>Search</Button>
+              </Grid>
+            </Box>
+          </Paper>
+        </Box>
       </Grid>
       <Grid container spacing={3}>
         { movies.map(movie => {
