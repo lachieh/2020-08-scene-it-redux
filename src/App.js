@@ -1,7 +1,6 @@
-import { Box, Button, Container, Grid, IconButton, InputBase, Paper, TextField, Typography } from '@material-ui/core';
+import { Box, Button, Container, Grid, InputBase, Paper, Typography } from '@material-ui/core';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './App.css';
 import MovieCard from './components/MovieCard';
 import { setData } from './redux/actions';
 
@@ -26,8 +25,8 @@ function App() {
     <Container>
       <Typography variant="h1" align="center">Scene It!</Typography>
       <Grid container direction="row" justify="center" alignItems="center">
-        <Box p={2} width="80%" maxWidth={400}>
-          <Paper component="form" onSubmit={handleSubmit} style={{ width: '100%' }}>
+        <Box p={2} mb={2} width="80%" maxWidth={400}>
+          <Paper elevation={24} component="form" color="primary" onSubmit={handleSubmit} style={{ width: '100%' }}>
             <Box p={1}>
               <Grid container direction="row" alignItems="center" justify="center">
                 <InputBase
@@ -37,7 +36,7 @@ function App() {
                   onChange={(e) => {setSearch(e.target.value)}}
                   style={{ flexGrow: '1' }}
                 />
-                <Button type="submit" variant="contained" disableElevation>Search</Button>
+                <Button type="submit" variant="contained" color="primary" disableElevation>Search</Button>
               </Grid>
             </Box>
           </Paper>
