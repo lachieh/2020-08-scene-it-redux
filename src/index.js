@@ -7,6 +7,7 @@ import { store } from './redux/store';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import { blue, green } from '@material-ui/core/colors';
+import { BrowserRouter } from 'react-router-dom';
 
 
 const theme = createMuiTheme({
@@ -34,8 +35,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <App />
+        <BrowserRouter>
+          <CssBaseline />
+          <App />
+        </BrowserRouter>
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,
