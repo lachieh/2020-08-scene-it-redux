@@ -4,42 +4,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline } from '@material-ui/core';
-import { blue, green } from '@material-ui/core/colors';
 import { BrowserRouter } from 'react-router-dom';
-
-
-const theme = createMuiTheme({
-  palette: {
-    type: 'dark',
-    primary: blue,
-    secondary: green,
-  },
-  overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        html: {
-          WebkitFontSmoothing: 'auto',
-        },
-        body: {
-          background: '#333',
-          color: '#fff'
-        }
-      },
-    },
-  },
-})
+import Theme from './components/Theme';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <CssBaseline />
+      <BrowserRouter>
+        <Theme>
           <App />
-        </BrowserRouter>
-      </ThemeProvider>
+        </Theme>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
