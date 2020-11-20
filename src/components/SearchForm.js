@@ -13,7 +13,7 @@ export default function SearchForm() {
 
     const encodedSearch = encodeURIComponent(search);
     // get movies from API
-    fetch(`http://www.omdbapi.com/?apikey=59354c85&s=${encodedSearch}`)
+    fetch(`https://www.omdbapi.com/?apikey=59354c85&s=${encodedSearch}`)
       .then(res => res.json())
       .then(data => {
         dispatch(setData(data.Search));
